@@ -1,0 +1,317 @@
+~~ $Id$
+
+        ---
+        Release Notes
+        ---
+        tl046593
+        ---
+        March 2019
+        ---
+
+{1.2.0}
+
+    Changes included with release 1.2.0.
+
+    ARTIFACTID-1
+
+    CFCTRACE-2
+
+    []
+
+    Enhancements
+
+    * None
+
+    []
+
+    Bug Fixes
+
+    * None
+
+{1.1.0}
+
+    Changes included with release 1.1.0.
+
+    STORY-111
+
+    NEWINDEX-01
+
+    AUTOMATICPROCESS-01
+
+    []
+
+    Enhancements
+
+    * Functional Enhancements
+
+    - Added Deployment Indicator for Auto Processing of Experian Rules
+
+    - Added Support for Facility Level roll-out between BRE and Experian Rules
+
+    * Technical Enhancements
+
+    - Created a non-clustered index on create date time to improve purge job performance
+
+    []
+
+    Bug Fixes
+
+    * None
+
+{1.0.0}
+
+    Changes included with release 1.0.0.
+
+    FIXDBCHANGES-001
+
+    RULES-00001
+
+    CDVALUES-02
+
+    DEFAULTPRCSIND-0
+
+    SAVEVIEW-1
+
+    REMOVEDOCLINK-250
+
+    RULESFIX-01
+
+    IGNORECASE-1
+
+    NEWJUNITS-2
+
+    ENCOUNTERDEFECT-01
+
+    []
+
+    Enhancements
+
+    * Functional Enhancements
+
+    - SOARFIN-26009 (Eligibility Rules Processing)
+
+    - SOARFIN-30220 (Upgrading HDX Slide Panels)
+
+    - Encounter typeAbbreviation name change to typeClassName in Client Jar
+
+    * Technical Improvements
+
+    - Remove unused Coded Values Database methods
+
+    - Add additional Junits for rule result processing, exception handling, and ignore case scenarios.
+
+    - Save Eligibility View Response call into Eligibility rcv_log Database Table
+
+    * Fortify
+
+    - Fixed Dynamic Code Evaluation: Unsafe Deserialization issue
+
+    - Fixed Unreleased Resource: Streams issue
+
+    - Fixed Null Dereference issue
+
+    - Fixed Log Forging issue
+
+    * Twistlock
+
+    - Fixed comfasterxml.jackson.core_jackson-databind issue
+
+    - Fixed Heap-based buffer over-read issue
+
+    - Fixed FasterXML jackson-databind 2.0.0 through 2.9.10 vulnerability
+
+    []
+
+    Bug Fixes
+
+    - Fixed Bad Plan discrepancy not being triggered when case of labelAbbreviation is different, by ignoring case at value compare.
+
+    - Fixed NPE when looking for Rules Enabled Solution Deployer attribute, by defaulting value to false.
+
+    - Fixed Rules CFC Transaction ID lookup issue, by querying eligibility request table for CFC Trans ID instead of fetching from the Service Trace.
+
+    - Fixed Rules NumberFormatException and Rules Database issue, by catching the NFE and modifying Rules Database foreign key to use elig_rqst_obj_id instead of cfc_trans_id.
+
+{0.1.8}
+
+    Changes included with release 0.1.8.
+
+    DBFIXES-1
+
+    []
+
+    Enhancements
+
+    * None
+
+    []
+
+    Bug Fixes
+
+    * None
+
+{0.1.7}
+
+    Changes included with release 0.1.7.
+
+    FIXFORTIFY-001
+
+    HPDISPLAY-1
+
+    []
+
+    Enhancements
+
+    * None
+
+    []
+
+    Bug Fixes
+
+    * None
+
+{0.0.2}
+
+    Changes included with release 0.0.2.
+
+    STORY-00046
+
+    FIXBEARER-00001
+
+    REMOVEFORTIFY-00001
+
+    CDVALUE-00002
+
+    ADDFORTIFY-00001
+
+    CDVALUE-00003
+
+    STORY-00044
+
+    ADDCOLUMN-0001
+
+    CDVALUE-00004
+
+    STORY-23
+
+    STORY-45
+
+    LIQUIBASE-00001
+
+    STORY-41
+
+    STORYFIX-41
+
+    SOLUTION-00002
+
+    QUERYBYCFCID-00001
+
+    LIQUIBASE-00002
+
+    STORY-42
+
+    STORY-61
+
+    STORY-255891
+
+    STORY-56
+
+    FIXBIRTHDATE-001
+
+    FIXSTORY-52
+
+    STATE-1
+
+    STORY-58
+
+    STORY-55
+
+    STORY-65
+
+    REMOVEFORTIFY-1
+
+    STORY-66
+
+    JAVAUPLIFT-001
+
+    LIQUIBASE-0531
+
+    LIQUIBASE-00003
+
+    UTC-1
+
+    STORY-64
+
+    LIQUIBASE-0607
+
+    LIQUIBASE-00004
+
+    JENKINS-0001
+
+    STORY-53
+
+    DBCHANGES-002
+
+    STORY-68
+
+    STORYREV-53
+
+    BUGFIX-1
+
+    STORY-60
+
+    PERFTUNE-001
+
+    RLSVERSTABLE-001
+
+    PERFTUNE-002
+
+    ADDFORTIFY-1
+
+    STORY-67
+
+    READYCHECK-001
+
+    OPENJDK-8
+
+    SEMANTICVERSION-001
+
+    LIQUIBASECON-01
+
+    CDVALNOCACHE-001
+
+    NEW-61
+
+    FIXSTORY-68
+
+    REVCLDDEV-1
+
+    PREPARE-012
+
+    NEWSTORY-42
+
+    DEPENDENCIES-1
+
+    DATEFIX-1
+
+    DEPENDENCIES-3
+
+    REFACTORBOM-1
+
+    REVCLDMIGRATION-1
+
+    SAVELOWER-1
+
+    TWISTLOCK-001
+
+    []
+
+    Enhancements
+
+    * None
+
+    []
+
+    Bug Fixes
+
+    * None

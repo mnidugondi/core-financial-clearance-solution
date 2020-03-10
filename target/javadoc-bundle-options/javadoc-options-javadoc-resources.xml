@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<javadocOptions>
+  <tags>
+    <tag>
+      <name>cerner.test.id</name>
+      <head>Cerner Test Identifier:</head>
+    </tag>
+  </tags>
+  <docletArtifacts>
+    <docletArtifact />
+  </docletArtifacts>
+  <tagletArtifacts>
+    <tagletArtifact />
+  </tagletArtifacts>
+  <docfilesSubdirsUsed>true</docfilesSubdirsUsed>
+  <javadocResourcesDirectory>src/main/javadoc</javadocResourcesDirectory>
+</javadocOptions>

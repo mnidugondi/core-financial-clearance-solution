@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EligibilityRulesContainerFactory.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">core-financial-clearance-solution</a> &gt; <a href="index.source.html" class="el_package">com.cerner.careaware.build.solution.container</a> &gt; <span class="el_source">EligibilityRulesContainerFactory.java</span></div><h1>EligibilityRulesContainerFactory.java</h1><pre class="source lang-java linenums">package com.cerner.careaware.build.solution.container;
+
+import com.cerner.careaware.build.factory.ServiceFactory;
+import com.cerner.careaware.build.model.container.ContainerEntity;
+import com.cerner.careaware.datamodel.configuration.context.schema.ConfigurationSchema;
+import com.cerner.careaware.datamodel.configuration.context.schema.SchemaElement;
+import com.cerner.ibus.cfc.eligibilityrules.CfcEligibilityRulesService;
+import com.cerner.ibus.cfc.eligibilityrules.context.config.DeployerConfig;
+import com.cerner.icommand.ContextData;
+
+<span class="nc" id="L11">public class EligibilityRulesContainerFactory {</span>
+
+  private static final String CORE_FINANCIAL_CLEARANCE_RULES_CONTAINER =
+      &quot;CoreFinancialClearanceEligibilityRulesContainer&quot;;
+  private static final String CFC_RULES_CONFIGURATIONS_LABEL =
+      &quot;CFC Eligibility Rules Configurations&quot;;
+  private static final String CORE_FINANCIAL_CLEARANCE_ELIGIBILITYRULES_SERVICE =
+      &quot;CoreFinancialClearanceEligibilityRulesService&quot;;
+
+  public static ContainerEntity buildContainer() throws Exception {
+<span class="nc" id="L21">    final ContainerEntity container = new ContainerEntity(CORE_FINANCIAL_CLEARANCE_RULES_CONTAINER);</span>
+<span class="nc" id="L22">    container.requireService(new RulesServiceFactory().buildService());</span>
+<span class="nc" id="L23">    return container;</span>
+  }
+
+  public static class RulesServiceFactory extends ServiceFactory {
+
+    public RulesServiceFactory() {
+<span class="nc" id="L29">      super(EligibilityRulesContainerFactory.CORE_FINANCIAL_CLEARANCE_ELIGIBILITYRULES_SERVICE,</span>
+          CfcEligibilityRulesService.class);
+<span class="nc" id="L31">    }</span>
+
+    @Override
+    protected ConfigurationSchema createSchema() throws Exception {
+     
+<span class="nc" id="L36">      final SchemaElement configGroup =</span>
+<span class="nc" id="L37">          ELEMENT_LABEL(EligibilityRulesContainerFactory.CFC_RULES_CONFIGURATIONS_LABEL);</span>
+
+<span class="nc" id="L39">      configGroup.addElements(ELEMENT_DATABASE_CONFIG());</span>
+
+<span class="nc" id="L41">      final SchemaElement rulesEngineGroup =</span>
+<span class="nc" id="L42">          ELEMENT_GROUP(&quot;Rules Engine Configuration&quot;, &quot;Rules Engine Configuration&quot;);</span>
+<span class="nc" id="L43">      rulesEngineGroup.addElements(ELEMENT_STRING(rulesEngineGroup, &quot;URL:&quot;,</span>
+          &quot;URL for rules engine. (Note: If using port, please follow this format 'IP Address:Port'&quot;,
+          DeployerConfig.RULES_URL));
+<span class="nc" id="L46">      rulesEngineGroup.addElements(ELEMENT_PASSWORD(rulesEngineGroup, &quot;Token:&quot;,</span>
+          &quot;Security token for rules engine endpoint&quot;, DeployerConfig.RULES_TOKEN));
+
+<span class="nc" id="L49">      final SchemaElement readinessGroup =</span>
+<span class="nc" id="L50">          ELEMENT_GROUP(&quot;Readiness Health Check&quot;, &quot;Readiness Health Check&quot;);</span>
+<span class="nc" id="L51">      final SchemaElement healthCheck =</span>
+<span class="nc" id="L52">          ELEMENT_BOOLEAN(readinessGroup, &quot;Perform Rules Engine Health Check&quot;,</span>
+              &quot;Do readiness health check for Rules&quot;, DeployerConfig.RULES_ENGINE_READINESS_CHECK);
+
+<span class="nc" id="L55">      readinessGroup.addElements(healthCheck);</span>
+
+<span class="nc" id="L57">      return new ConfigurationSchema(configGroup, ELEMENT_SPACER(),</span>
+<span class="nc" id="L58">          rulesEngineGroup, ELEMENT_SPACER(), readinessGroup);</span>
+    }
+
+    @Override
+    protected ContextData getDefaultConfig() throws Exception {
+<span class="nc" id="L63">      ContextData contextData = new ContextData();</span>
+<span class="nc" id="L64">      contextData.put(DeployerConfig.RULES_ENGINE_READINESS_CHECK, false);</span>
+<span class="nc" id="L65">      return contextData;</span>
+    }
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

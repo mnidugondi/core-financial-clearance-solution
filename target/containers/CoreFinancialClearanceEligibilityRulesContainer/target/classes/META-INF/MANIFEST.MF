@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Bundle-Description: corefinancialclearanceeligibilityrules-container
+Bundle-SymbolicName: corefinancialclearanceeligibilityrules-container
+Require-Bundle: careaware-core, careaware-core-bindings, careaware-cor
+ e-bindings-chopin, careaware-core-client, careaware-core-service, car
+ eaware-datamodel-configuration, careaware-datamodel-monitoring, carea
+ ware-encryption, careaware-utils, com.cerner.management.core.util, co
+ m.cerner.management.measurement, com.cerner.system.conf, com.cerner.s
+ ystem.core, com.cerner.system.enterprise.csa, com.cerner.system.enter
+ prise.data, com.cerner.system.i18n, com.cerner.system.instrument, com
+ .cerner.system.registry, com.mysql.jdbc, com.rabbitmq.client, com.zax
+ xer.HikariCP, common-i18n, edc-core, edc-core-client, ibus-cfc-eligib
+ ility-client, ibus-cfc-eligibility-service, ibus-cfc-eligibilityrules
+ -service, ibus-core, ibus-core-connection, ibus-core-connection-rabbi
+ tmq, ibus-core-container, ibus-core-container-docker, ibus-core-conta
+ iner-spring, ibus-core-data, ibus-core-data-compat, ibus-core-data-kr
+ yo, ibus-core-data-spring, ibus-core-data-xstream, ibus-core-manageme
+ nt, ibus-core-service, ibus-tenant-registry-loader, icommand-core, ja
+ vassist, joda-time, org.apache.commons.codec, org.apache.commons.io, 
+ org.apache.commons.logging, org.hibernate.common.hibernate-commons-an
+ notations, org.hibernate.core, org.hibernate.javax.persistence.hibern
+ ate-jpa-2.1-api, org.xbill.dns, slf4j.api, springboot-microservice-ca
+ reawarepubsub, system-instrument-logging-slf4j, xstream
+Bundle-ManifestVersion: 2
+Bundle-Copyright: DeviceWorks - Cerner Corporation (c) 2018-2020
+Bundle-DocURL: http://repos.devcareaware.net/snapshot-site/com.cerner.
+ careaware.ibus/corefinancialclearanceeligibilityrules-container/1.2.0
+ -SNAPSHOT//corefinancialclearanceeligibilityrules-container
+Bundle-Vendor: DeviceWorks - Cerner Corporation
+Bundle-ContactAddress: https://wiki.ucern.com/display/careaware/DWx+En
+ gineering
+Bundle-Name: CoreFinancialClearanceEligibilityRulesContainer
+Bundle-Version: 1.2.0.SNAPSHOT
+Bundle-ClassPath: .

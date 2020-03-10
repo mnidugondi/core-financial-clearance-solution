@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SpringbootCareAwarePubSubContainerFactory.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">core-financial-clearance-solution</a> &gt; <a href="index.source.html" class="el_package">com.cerner.careaware.build.solution.container</a> &gt; <span class="el_source">SpringbootCareAwarePubSubContainerFactory.java</span></div><h1>SpringbootCareAwarePubSubContainerFactory.java</h1><pre class="source lang-java linenums">package com.cerner.careaware.build.solution.container;
+
+
+import com.cerner.careaware.SpringbootMicroserviceCareawarepubsubApplication;
+import com.cerner.careaware.build.factory.ServiceFactory;
+import com.cerner.careaware.build.model.container.ContainerEntity;
+import com.cerner.careaware.datamodel.configuration.context.schema.ConfigurationSchema;
+import com.cerner.careaware.datamodel.configuration.context.schema.SchemaElement;
+import com.cerner.ibus.cfc.eligibility.context.config.DeployerConfig;
+import com.cerner.icommand.ContextData;
+
+<span class="nc" id="L12">public class SpringbootCareAwarePubSubContainerFactory {</span>
+	
+
+
+	private static final String SPRINGBOOT_MICROSERVICE_CAREAWAREPUBSUBCONATINER = &quot;SpringbootMicroserviceCareawarePubSubContainer&quot;;
+	private static final String CFC_SPRINGBOOT_MICROSERVICE_CAREAWAREPUSUB_LABEL = &quot;CFC springboot microservice careawarepubsub Configurations&quot;;
+	private static final String SPRINGBOOT_MICROSERVICE_CAREAWAREPUBSUB = &quot;SpringbootMicroserviceCareawarePubSub&quot;;
+
+
+	public static ContainerEntity buildContainer() throws Exception {
+<span class="nc" id="L22">		final ContainerEntity container = new ContainerEntity(SPRINGBOOT_MICROSERVICE_CAREAWAREPUBSUBCONATINER);</span>
+<span class="nc" id="L23">		container.requireService(new SpringbootCareAwarePubSubServiceFactory().buildService());</span>
+<span class="nc" id="L24">		return container;</span>
+	}
+
+	public static class SpringbootCareAwarePubSubServiceFactory extends ServiceFactory {
+
+		
+
+		public SpringbootCareAwarePubSubServiceFactory() {
+<span class="nc" id="L32">			super(SpringbootCareAwarePubSubContainerFactory.SPRINGBOOT_MICROSERVICE_CAREAWAREPUBSUB, </span>
+					SpringbootMicroserviceCareawarepubsubApplication.class
+					);
+<span class="nc" id="L35">		}</span>
+
+		@Override
+		protected ConfigurationSchema createSchema() throws Exception {
+			
+<span class="nc" id="L40">			final SchemaElement configGroup = ELEMENT_LABEL(SpringbootCareAwarePubSubContainerFactory.CFC_SPRINGBOOT_MICROSERVICE_CAREAWAREPUSUB_LABEL);</span>
+
+<span class="nc" id="L42">			configGroup.addElements(ELEMENT_DATABASE_CONFIG());</span>
+			
+			
+<span class="nc" id="L45">			  final SchemaElement rulesStatus = ELEMENT_STRING(&quot;Eligibility Rules Service&quot;, null,</span>
+			  DeployerConfig.RULES_STATUS);
+<span class="nc" id="L47">			  rulesStatus.addConditions(IF(ALWAYS()).enforce(&quot;Disabled&quot;, &quot;Enabled&quot;));</span>
+			 
+<span class="nc" id="L49">		      final SchemaElement automaticProcessingGroup =</span>
+<span class="nc" id="L50">		          ELEMENT_GROUP(&quot;Automatic Processing flag&quot; , &quot;Automatic Processing flag&quot;);</span>
+<span class="nc" id="L51">		      final SchemaElement automaticProcessing =</span>
+<span class="nc" id="L52">		          ELEMENT_BOOLEAN(automaticProcessingGroup, &quot;Vendor Non-CFC Automatic Processing flag&quot;,</span>
+		              &quot;Automatic Processing Indicator for Vendor Rule Results&quot;, DeployerConfig.AUTOMATIC_PROCESSING_FLAG);
+
+<span class="nc" id="L55">		      automaticProcessingGroup.addElements(automaticProcessing);</span>
+
+<span class="nc" id="L57">			return new ConfigurationSchema(configGroup,ELEMENT_SPACER(),rulesStatus ,ELEMENT_SPACER(),automaticProcessingGroup);</span>
+		}
+
+		@Override
+		protected ContextData getDefaultConfig() throws Exception {
+<span class="nc" id="L62">			ContextData contextData= new ContextData();</span>
+<span class="nc" id="L63">			contextData.put(DeployerConfig.AUTOMATIC_PROCESSING_FLAG, false);</span>
+<span class="nc" id="L64">			contextData.put(DeployerConfig.RULES_STATUS, &quot;Disabled&quot;);</span>
+<span class="nc" id="L65">			return contextData;</span>
+		}
+
+	}
+
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

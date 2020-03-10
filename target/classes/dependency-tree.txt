@@ -1,0 +1,227 @@
+com.cerner.careaware.build:CoreFinancialClearance-Solution:ibus-solution:1.2.0-SNAPSHOT
++- com.cerner.careaware.build:careaware-build-core:jar:2.22.1:compile
+|  \- com.cerner.careaware.ibus:ibus-core:jar:2.10.0:compile
+|     \- com.cerner.management.measurement:management-measurement:jar:4.3.4:compile
+|        \- com.cerner.management:management-core-util:jar:4.3.4:compile
+|           +- com.cerner.services.security.authorization:security-authorization:jar:1.0.1:compile
+|           \- com.cerner.services.security.authorization:security-authorization-guardian:jar:1.1.1:runtime
++- com.cerner.careaware.build:careaware-build-factory:jar:2.22.1:compile
+|  +- com.cerner.careaware.edc:edc-core:jar:1.9.0:compile
+|  +- com.cerner.careaware.edc:edc-core-client:jar:4.3.0:compile
+|  |  +- com.cerner.careaware.edc:xstream-plugin:jar:1.4.11.1:compile
+|  |  |  +- com.thoughtworks.xstream:xstream:jar:1.4.11.1:compile
+|  |  |  +- xpp3:xpp3_min:jar:1.1.4c:compile
+|  |  |  \- xmlpull:xmlpull:jar:1.1.3.1:compile
+|  |  +- com.cerner.system.enterprise:system-enterprise-csa:jar:1.3.2:compile
+|  |  +- com.cerner.system.enterprise:system-enterprise-data:jar:2.4:compile
+|  |  +- com.cerner.system.registry:system-registry:jar:2.1:compile
+|  |  +- javax.jms:jms:jar:1.1:compile
+|  |  \- org.xbill.dns:org.xbill.dns:jar:2.1.3:compile
+|  +- com.cerner.careaware.event.management.evaluator:event-management-evaluator-context-source:jar:2.1.0:compile
+|  |  +- com.cerner.careaware.services:careaware-core-client:jar:5.2.0:compile
+|  |  +- com.cerner.careaware.services:careaware-core-datamodel:jar:1.5.0:compile
+|  |  |  \- com.cerner.careaware.services:careaware-datamodel-code:jar:2.5.0:compile
+|  |  +- com.cerner.careaware.services:careaware-datamodel-encounter:jar:2.13.0:compile
+|  |  |  +- com.cerner.careaware.services:careaware-datamodel-patientdeviceassoc:jar:2.5.1-SNAPSHOT:compile
+|  |  |  \- com.cerner.careaware.services:careaware-datamodel-provider:jar:1.5.1:compile
+|  |  |     \- com.cerner.eps:eps-util:jar:1.7.0:compile
+|  |  +- com.cerner.careaware.services:careaware-datamodel-location:jar:2.11.0:compile
+|  |  +- com.cerner.careaware.services:careaware-datamodel-patient:jar:2.12.0:compile
+|  |  +- com.cerner.careaware.services:careaware-datamodel-personnel:jar:1.10.0:compile
+|  |  |  \- com.cerner.ibus.client:ibus-personnel-client:jar:1.3.0:compile
+|  |  |     \- com.cerner.careaware.ibus:ibus-core-data-gson:jar:1.3.0:compile
+|  |  +- com.cerner.icommand.core:event-context-utility:jar:1.3.1:compile
+|  |  +- com.cerner.ibus.client:ibus-eventrouting-client:jar:1.1.0:compile
+|  |  +- com.cerner.icommand.core:icommand-alertlink-components:jar:2.3.1:compile
+|  |  |  \- com.cerner.careaware.ibus:ibus-core-connection-inmemory:jar:1.10.0:compile
+|  |  |     +- org.hornetq:hornetq-jms:jar:2.2.21.Final:compile
+|  |  |     \- org.jboss.netty:netty:jar:3.2.7.Final:compile
+|  |  +- com.cerner.icommand.core:icommand-retriever-core:jar:3.1.0:compile
+|  |  |  +- com.cerner.careaware.edc:edc-data-model-core:jar:2.6.0:compile
+|  |  |  |  \- com.cerner.ibus.client:ibus-device-client:jar:1.12.0:compile
+|  |  |  +- com.cerner.careaware.services:careaware-datamodel-correlationassociation:jar:2.3.0:compile
+|  |  |  |  \- com.cerner.careaware.services:careaware-datamodel-tempstore-common:jar:3.8.0:compile
+|  |  |  +- com.cerner.careaware.services:careaware-datamodel-p2da:jar:3.6.0:compile
+|  |  |  +- com.cerner.careaware.services:careaware-serviceproxy-devicelifecycle:jar:1.3.0:compile
+|  |  |  |  \- com.cerner.careaware.edc:edc-data-model-service:jar:3.24.0:compile
+|  |  |  +- com.cerner.careaware.services:careaware-serviceproxy-encounter:jar:2.13.0:compile
+|  |  |  +- com.cerner.careaware.services:careaware-serviceproxy-location:jar:2.11.0:compile
+|  |  |  +- com.cerner.careaware.services:careaware-serviceproxy-p2da:jar:3.6.0:compile
+|  |  |  +- com.cerner.careaware.services:careaware-serviceproxy-patient:jar:2.12.0:compile
+|  |  |  |  \- com.cerner.ibus.client:ibus-location-client:jar:1.5.0:compile
+|  |  |  \- com.cerner.careaware.services:careaware-serviceproxy-personnel:jar:1.10.0:compile
+|  |  +- com.cerner.system.cache:system-cache:jar:2.6:compile
+|  |  |  \- com.cerner.system:system-event:jar:2.0:compile
+|  |  +- com.google.guava:guava-osgi:jar:9.0:compile
+|  |  +- com.google.guava:guava:jar:26.0-jre:compile
+|  |  |  +- com.google.code.findbugs:jsr305:jar:1.3.9:compile
+|  |  |  +- org.checkerframework:checker-qual:jar:2.5.2:compile
+|  |  |  +- com.google.errorprone:error_prone_annotations:jar:2.1.3:compile
+|  |  |  +- com.google.j2objc:j2objc-annotations:jar:1.1:compile
+|  |  |  \- org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+|  |  +- com.google.inject:guice:jar:3.0:compile
+|  |  |  \- aopalliance:aopalliance:jar:1.0:compile
+|  |  \- joda-time:joda-time:jar:2.10.5:compile
+|  +- com.cerner.careaware.event.management.evaluator:event-management-evaluator-notification-engine-data-model:jar:3.1.0:compile
+|  |  +- com.cerner.careaware.services:careaware-datamodel-communicationdirectory:jar:1.8.0:compile
+|  |  |  \- com.cerner.careaware.services:careaware-connect-communicationgroup:jar:1.7.0:compile
+|  |  |     +- com.google.http-client:google-http-client:jar:1.20.0:compile
+|  |  |     +- com.google.http-client:google-http-client-gson:jar:1.20.0:compile
+|  |  |     \- org.bouncycastle:bcprov-jdk15on:jar:1.54:compile
+|  |  \- com.cerner.careaware.services:careaware-datamodel-personnelassignment:jar:1.4.0:compile
+|  +- com.cerner.careaware.ibus:ibus-core-data:jar:1.10.0:compile
+|  +- com.cerner.careaware.ibus:ibus-core-data-inmemory:jar:1.5.0:compile
+|  +- com.cerner.careaware.ibus:ibus-core-data-jdbc:jar:2.9.0:compile
+|  |  +- commons-lang:commons-lang:jar:2.6:compile
+|  |  +- com.cerner.careaware.services:careaware-core-dataaccess:jar:4.6.0:compile
+|  |  +- com.cerner.careaware.services:careaware-core-dataaccess-jdbc:jar:4.6.0:compile
+|  |  |  +- io.dropwizard.metrics:metrics-healthchecks:jar:4.0.7:compile
+|  |  |  +- io.dropwizard.metrics:metrics-core:jar:4.0.7:compile
+|  |  |  \- org.apache.derby:derby:jar:10.14.2.0:compile
+|  |  \- com.mysql:mysql-connector-java-commercial:jar:8.0.16-bin:compile
+|  +- com.cerner.careaware.ibus:ibus-core-data-hazelcast:jar:1.13.0:compile
+|  |  \- com.hazelcast:hazelcast:jar:3.12.4:compile
+|  +- com.cerner.careaware.ibus:ibus-core-connection:jar:1.23.0:compile
+|  |  \- commons-codec:commons-codec:jar:1.11:compile
+|  +- com.cerner.careaware.ibus:ibus-core-management:jar:1.10.0:compile
+|  +- com.cerner.careaware.ibus:ibus-core-service:jar:1.8.0:compile
+|  +- com.cerner.careaware.services:careaware-core-bindings-chopin:jar:3.8.0:compile
+|  |  \- com.cerner.careaware.services:careaware-core-service:jar:3.1.0:compile
+|  +- com.cerner.careaware.services:careaware-serviceproxy-configuration:jar:1.15.0:compile
+|  |  +- com.cerner.careaware.edc:edc-core-client-compat:jar:1.3.0:compile
+|  |  +- com.cerner.careaware.ibus:ibus-core-data-compat:jar:1.6.0:compile
+|  |  \- com.cerner.careaware.services:careaware-encryption:jar:1.3.0:compile
+|  +- com.cerner.icommand.core:eventrouting-core:jar:2.0.1:compile
+|  |  \- org.hornetq:hornetq-core:jar:2.2.21.Final:compile
+|  +- com.cerner.common:common-i18n:jar:2.0-SNAPSHOT:compile
+|  +- com.cerner.common:common-string:jar:1.5:compile
+|  +- com.cerner.system:system-core:jar:2.9.1:compile
+|  \- commons-io:commons-io:jar:2.6:compile
++- com.cerner.careaware.services:careaware-datamodel-configuration:jar:1.17.2:compile
++- com.cerner.ibus.service:ibus-cfc-eligibility-service:jar:1.3.0-SNAPSHOT:compile
+|  +- org.springframework.boot:spring-boot-starter-actuator:jar:2.1.10.RELEASE:compile
+|  |  +- org.springframework.boot:spring-boot-starter:jar:2.1.10.RELEASE:compile
+|  |  |  +- org.springframework.boot:spring-boot-starter-logging:jar:2.1.10.RELEASE:compile
+|  |  |  |  +- org.apache.logging.log4j:log4j-to-slf4j:jar:2.11.2:compile
+|  |  |  |  |  \- org.apache.logging.log4j:log4j-api:jar:2.11.2:compile
+|  |  |  |  \- org.slf4j:jul-to-slf4j:jar:1.7.29:compile
+|  |  |  \- javax.annotation:javax.annotation-api:jar:1.3.2:compile
+|  |  +- org.springframework.boot:spring-boot-actuator-autoconfigure:jar:2.1.10.RELEASE:compile
+|  |  |  +- org.springframework.boot:spring-boot-actuator:jar:2.1.10.RELEASE:compile
+|  |  |  \- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.10.1:runtime
+|  |  \- io.micrometer:micrometer-core:jar:1.1.8:compile
+|  |     +- org.hdrhistogram:HdrHistogram:jar:2.1.9:compile
+|  |     \- org.latencyutils:LatencyUtils:jar:2.0.3:compile
+|  +- org.springframework:spring-context:jar:5.1.11.RELEASE:compile
+|  |  +- org.springframework:spring-aop:jar:5.1.11.RELEASE:compile
+|  |  +- org.springframework:spring-beans:jar:5.1.11.RELEASE:compile
+|  |  \- org.springframework:spring-expression:jar:5.1.11.RELEASE:compile
+|  +- org.springframework:spring-core:jar:5.1.11.RELEASE:compile
+|  |  \- org.springframework:spring-jcl:jar:5.1.11.RELEASE:compile
+|  +- org.springframework:spring-context-support:jar:5.1.11.RELEASE:compile
+|  +- org.springframework:spring-web:jar:5.1.11.RELEASE:compile
+|  +- org.springframework.boot:spring-boot-starter-data-jpa:jar:2.1.10.RELEASE:compile
+|  |  +- org.springframework.boot:spring-boot-starter-aop:jar:2.1.10.RELEASE:compile
+|  |  +- org.springframework.boot:spring-boot-starter-jdbc:jar:2.1.10.RELEASE:compile
+|  |  +- javax.transaction:javax.transaction-api:jar:1.3:compile
+|  |  +- javax.xml.bind:jaxb-api:jar:2.3.1:compile
+|  |  \- org.springframework.data:spring-data-jpa:jar:2.1.12.RELEASE:compile
+|  +- org.springframework.data:spring-data-commons:jar:2.1.12.RELEASE:compile
+|  |  \- org.slf4j:slf4j-api:jar:1.7.29:compile
+|  +- mysql:mysql-connector-java:jar:8.0.18:compile
+|  +- org.hibernate:hibernate-core:jar:5.3.13.Final:compile
+|  |  +- org.jboss.logging:jboss-logging:jar:3.3.3.Final:compile
+|  |  +- javax.persistence:javax.persistence-api:jar:2.2:compile
+|  |  +- org.javassist:javassist:jar:3.21.0-GA:compile
+|  |  +- net.bytebuddy:byte-buddy:jar:1.9.16:compile
+|  |  +- antlr:antlr:jar:2.7.7:compile
+|  |  +- org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:jar:1.1.1.Final:compile
+|  |  +- org.jboss:jandex:jar:2.0.5.Final:compile
+|  |  +- com.fasterxml:classmate:jar:1.4.0:compile
+|  |  +- javax.activation:javax.activation-api:jar:1.2.0:compile
+|  |  +- org.dom4j:dom4j:jar:2.1.1:compile
+|  |  +- org.hibernate.common:hibernate-commons-annotations:jar:5.0.4.Final:compile
+|  |  \- org.glassfish.jaxb:jaxb-runtime:jar:2.3.1:compile
+|  |     +- org.glassfish.jaxb:txw2:jar:2.3.1:compile
+|  |     +- com.sun.istack:istack-commons-runtime:jar:3.0.7:compile
+|  |     +- org.jvnet.staxex:stax-ex:jar:1.8:compile
+|  |     \- com.sun.xml.fastinfoset:FastInfoset:jar:1.2.15:compile
+|  +- org.springframework:spring-orm:jar:5.1.11.RELEASE:compile
+|  |  +- org.springframework:spring-jdbc:jar:5.1.11.RELEASE:compile
+|  |  \- org.springframework:spring-tx:jar:5.1.11.RELEASE:compile
+|  +- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:jar:1.0.2.Final:compile
+|  +- org.hibernate:hibernate-entitymanager:jar:5.3.13.Final:compile
+|  +- com.zaxxer:HikariCP:jar:3.2.0:compile
+|  +- org.springframework.boot:spring-boot:jar:2.1.10.RELEASE:compile
+|  +- org.springframework.boot:spring-boot-autoconfigure:jar:2.1.10.RELEASE:compile
+|  +- com.google.code.gson:gson:jar:2.8.5:compile
+|  +- javax.inject:javax.inject:jar:1:compile
+|  +- org.liquibase:liquibase-core:jar:3.6.3:compile
+|  |  \- org.yaml:snakeyaml:jar:1.23:compile
+|  +- org.liquibase.ext:liquibase-hibernate5:jar:3.6:compile
+|  |  +- org.hibernate:hibernate-envers:jar:5.3.13.Final:compile
+|  |  \- com.h2database:h2:jar:1.4.200:compile
+|  +- com.cerner.careaware.ibus:ibus-core-connection-sonic:jar:1.14.0:compile
+|  |  +- com.sonic:mfcontext:jar:10.0.7.175:compile
+|  |  +- com.sonic:mgmt_client:jar:10.0.7.175:compile
+|  |  +- com.sonic:mgmt_config:jar:10.0.7.175:compile
+|  |  +- com.sonic:sonic_channel:jar:10.0.7.175:compile
+|  |  +- com.sonic:sonic_client:jar:10.0.7.175:compile
+|  |  +- com.sonic:sonic_crypto:jar:10.0.7.175:compile
+|  |  +- com.sonic:sonic_mgmt_client:jar:10.0.7.175:compile
+|  |  +- com.sonic:sonic_selector:jar:10.0.7.175:compile
+|  |  +- com.sonic:sonic_sf:jar:10.0.7.175:compile
+|  |  +- com.sonic:sonic_ssl:jar:10.0.7.175:compile
+|  |  +- com.sonic:sonic_xa:jar:10.0.7.175:compile
+|  |  \- com.sonic:sonic_xmessage:jar:10.0.7.175:compile
+|  +- com.cerner.careaware.ibus:ibus-core-connection-rabbitmq:jar:1.17.1:compile
+|  |  \- com.rabbitmq:amqp-client:jar:5.7.3:compile
+|  +- com.cerner.careaware.ibus:ibus-core-data-kryo:jar:1.5.0:compile
+|  +- com.cerner.careaware.ibus:ibus-core-data-xstream:jar:1.7.0:compile
+|  +- com.cerner.careaware.ibus:ibus-core-container:jar:1.30.0:compile
+|  |  +- com.cerner.careaware.services:careaware-datamodel-monitoring:jar:2.4.0:compile
+|  |  +- com.cerner.careaware.services:careaware-utils:jar:1.4.0:compile
+|  |  \- cglib:cglib-nodep:jar:3.3.0:compile
+|  +- com.cerner.system.instrument:system-instrument:jar:2.6:compile
+|  +- com.cerner.system.registry:system-registry-genesis:jar:2.0.1:compile
+|  |  \- com.cerner.system:system-conf:jar:2.0:compile
+|  +- org.powermock:powermock-module-junit4:jar:1.6.5:compile
+|  |  +- junit:junit:jar:4.12:compile
+|  |  |  \- org.hamcrest:hamcrest-core:jar:1.3:compile
+|  |  \- org.powermock:powermock-module-junit4-common:jar:1.6.5:compile
+|  |     +- org.powermock:powermock-core:jar:1.6.5:compile
+|  |     \- org.powermock:powermock-reflect:jar:1.6.5:compile
+|  |        \- org.objenesis:objenesis:jar:2.2:compile
+|  +- com.cerner.careaware.ibus:ibus-tenant-registry-loader:jar:2.10.0:compile
+|  +- com.cerner.careaware.ibus:ibus-core-data-spring:jar:1.3.0:compile
+|  |  \- ch.qos.logback:logback-classic:jar:1.2.3:compile
+|  |     \- ch.qos.logback:logback-core:jar:1.2.3:compile
+|  +- com.cerner.ibus.client:ibus-cfc-eligibility-client:jar:1.1.0-SNAPSHOT:compile
+|  +- org.codehaus.jackson:jackson-mapper-asl:jar:1.9.13:compile
+|  |  \- org.codehaus.jackson:jackson-core-asl:jar:1.9.13:compile
+|  +- org.springframework:spring-aspects:jar:5.1.11.RELEASE:compile
+|  |  \- org.aspectj:aspectjweaver:jar:1.9.4:compile
+|  +- com.mikesamuel:json-sanitizer:jar:1.2.0:compile
+|  +- com.googlecode.json-simple:json-simple:jar:1.1.1:compile
+|  \- com.fasterxml.jackson.dataformat:jackson-dataformat-csv:jar:2.10.1:compile
+|     +- com.fasterxml.jackson.core:jackson-databind:jar:2.10.1:compile
+|     +- com.fasterxml.jackson.core:jackson-annotations:jar:2.10.1:compile
+|     \- com.fasterxml.jackson.core:jackson-core:jar:2.10.1:compile
++- com.cerner.ibus.service:ibus-cfc-eligibilityrules-service:jar:1.3.0-SNAPSHOT:compile
+|  +- com.cerner.careaware.services:careaware-core-dataaccess-jdbc-mysql:jar:4.6.0:compile
+|  +- org.mapstruct:mapstruct:jar:1.3.0.Final:compile
+|  +- com.shazam:shazamcrest:jar:0.11:compile
+|  |  +- org.skyscreamer:jsonassert:jar:1.5.0:compile
+|  |  |  \- com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1:compile
+|  |  \- org.apache.commons:commons-lang3:jar:3.8.1:compile
+|  +- net.java.dev.vcc.thirdparty:collection-setter-injector:jar:0.5.0-1:compile
+|  +- org.jvnet.jaxb2_commons:jaxb2-basics-runtime:jar:0.11.1:compile
+|  \- org.apache.httpcomponents:httpclient:jar:4.5.9:compile
+|     +- org.apache.httpcomponents:httpcore:jar:4.4.12:compile
+|     \- commons-logging:commons-logging:jar:1.2:compile
++- com.cerner.careaware:springboot-microservice-careawarepubsub:jar:0.0.1-SNAPSHOT:compile
++- com.cerner.icommand.core:icommand-core:jar:2.14.0:compile
+|  +- com.cerner.careaware.services:careaware-core:jar:1.6.0:compile
+|  +- com.cerner.careaware.services:careaware-core-bindings:jar:2.2.0:compile
+|  \- com.cerner.system:system-i18n:jar:2.4.1:compile
+\- com.cerner.system.instrument:system-instrument-logging-basic:jar:2.1:compile

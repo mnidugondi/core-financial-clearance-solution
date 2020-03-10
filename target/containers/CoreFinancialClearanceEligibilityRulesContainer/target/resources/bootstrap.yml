@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    config:
+      uri: ${CONFIG_SERVER_URL:http://config.cloud-dev.devcareaware.net/}
+      fail-fast: true
+      enabled: ${SPRING_CONFIG_ENABLED:true}
